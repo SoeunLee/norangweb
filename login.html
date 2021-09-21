@@ -20,10 +20,11 @@
 <script type="text/javascript">
   function logout() {
     if (!Kakao.Auth.getAccessToken()) {
-      console.log('Not logged in.');
+	  alert('Not logged in.');
       return;
     }
     Kakao.Auth.logout(function() {
+	  alert('success: ' + JSON.stringify(Kakao.Auth.getAccessToken()));
       console.log(Kakao.Auth.getAccessToken());
     });
   }
@@ -42,15 +43,17 @@
 
 <script type="text/javascript">
   Kakao.init('ca399a68b8d6a1cae0df38eb8c324562');
+
   function loginWithKakao() {
     Kakao.Auth.login({
-      success: function(authObj) {
-        alert(JSON.stringify(authObj))
+      scope: 'friends,talk_message'
+      success: function(response) {
+        alert(JSON.stringify(response))
       },
       fail: function(err) {
         alert(JSON.stringify(err))
-      },
-    })
+      }
+    });
   }
 </script>
 </body>
