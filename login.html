@@ -33,23 +33,9 @@ console.log(Kakao.isInitialized());
         url: '/v2/user/me',
         success: function(result) {
           $('#result').append(result);
-          id = result.id
-          connected_at = result.connected_at
-          kakao_account = result.kakao_account
-          $('#result').append(kakao_account);
           resultdiv="<h2>로그인 성공 !!"
-          resultdiv += '<h4>id: '+id+'<h4>'
           resultdiv += '<h4>connected_at: '+connected_at+'<h4>'
-          email ="";
-          gender = "";
-          if(typeof kakao_account != 'undefined'){
-        	  email = kakao_account.email;
-        	  gender = kakao_account.gender;
-          }
-          resultdiv += '<h4>email: '+email+'<h4>'
-          resultdiv += '<h4>gender: '+gender+'<h4>'
           $('#result').append(resultdiv);
-          
         },
         fail: function(error) {
           alert(
