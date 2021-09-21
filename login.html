@@ -24,8 +24,7 @@
       return;
     }
     Kakao.Auth.logout(function() {
-	  alert('success: ' + JSON.stringify(Kakao.Auth.getAccessToken()));
-      console.log(Kakao.Auth.getAccessToken());
+	  alert('success');
     });
   }
   function unlinkApp() {
@@ -46,7 +45,7 @@
 
   function loginWithKakao() {
     Kakao.Auth.login({
-      scope: 'friends,talk_message'
+      scope: 'friends,talk_message',
       success: function(response) {
         alert(JSON.stringify(response));
       },
