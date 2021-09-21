@@ -5,13 +5,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+
+<center>
 	<a id="custom-login-btn" href="javascript:loginWithKakao()">
       <img src="https://developers.kakao.com/tool/resource/static/img/button/login/full/ko/kakao_login_large_wide.png" />
 	</a>
-	<button class="api-btn" onclick="unlinkApp()">앱 탈퇴하기</button>
+	<br><br>
+	<button class="api-btn" onclick="logout()">로그아웃</button>
+	<br><br>
+	<button class="api-btn" onclick="unlinkApp()">회원탈퇴</button>
 	<div id="result"></div>
+</center>
 	
 <script type="text/javascript">
+  function logout() {
+    if (!Kakao.Auth.getAccessToken()) {
+      console.log('Not logged in.');
+      return;
+    }
+    Kakao.Auth.logout(function() {
+      console.log(Kakao.Auth.getAccessToken());
+    });
+  }
   function unlinkApp() {
     Kakao.API.request({
       url: '/v1/user/unlink',
