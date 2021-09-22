@@ -6,7 +6,7 @@
 <script src="norang.js"></script>
 <link rel="shortcut icon" href="favicon.ico">
 <meta property="og:description" content="묵상편지 구독을 위해 가입하세요." /> 
-<title>묵상편지 가입 페이지</title>
+<title>묵상편지 메인 페이지</title>
 </head>
 <body>
 
@@ -14,14 +14,14 @@
     <br><br>
 	<img src="thumb.png" />
 	<br><br>
-	<div style="font-size:1.5em;">묵상편지 로그인 페이지입니다.</div>
+	<div style="font-size:1.5em;">묵상편지 메인 페이지입니다.</div>
 	<br>
 	현재 안드로이드 버전만 제공하고 있습니다.<br>
 	문의: soeun@kakao.com
 	<br><br>
-	<a id="custom-login-btn" href="javascript:loginWithKakao()">
-      <img src="https://developers.kakao.com/tool/resource/static/img/button/login/full/ko/kakao_login_large_wide.png" />
-	</a>
+	<button class="api-btn" onclick="logout()">로그아웃</button>
+	<br><br>
+	<button class="api-btn" onclick="unlinkApp()">회원탈퇴</button>
 </center>
 
 </body>

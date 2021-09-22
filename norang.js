@@ -1,5 +1,6 @@
   Kakao.init('ca399a68b8d6a1cae0df38eb8c324562');
-
+  checkMember();
+  
   function loginWithKakao() {
     Kakao.Auth.login({
       scope: 'profile_nickname,profile_image,friends,talk_message',
@@ -19,6 +20,13 @@
       }
     });
 
+  }
+  function checkMember() {
+    if (!Kakao.Auth.getAccessToken()) {
+	  location.href='https://soeunlee.github.io/norangweb/login';
+	} else {
+	  location.href='https://soeunlee.github.io/norangweb/main';
+	}
   }
   function logout() {
     if (!Kakao.Auth.getAccessToken()) {
