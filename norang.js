@@ -19,6 +19,7 @@
         alert(JSON.stringify(err));
       }
     });
+	checkMember();
 
   }
   function checkMember() {
@@ -42,7 +43,7 @@
 		alert('success');
 	  });
 	}
-	location.href='https://soeunlee.github.io/norangweb/login';
+	checkMember();
   }
   function unlinkApp() {
     Kakao.API.request({
