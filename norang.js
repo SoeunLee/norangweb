@@ -12,7 +12,7 @@
 			alert(JSON.stringify(response.kakao_account.profile.nickname).replace(/\"/gi,"") + '님 환영합니다.');
 	      },
 	      fail: function(err) {
-		    // alert(JSON.stringify(err));
+		    alert(JSON.stringify(err));
 	      }
 	    });
       },
