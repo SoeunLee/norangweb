@@ -22,20 +22,24 @@
 
   }
   function checkMember() {
+	alert(document.location.href);
+	/*
     if (!Kakao.Auth.getAccessToken()) {
 	  location.href='https://soeunlee.github.io/norangweb/login';
 	} else {
 	  location.href='https://soeunlee.github.io/norangweb/main';
 	}
+	*/
   }
   function logout() {
     if (!Kakao.Auth.getAccessToken()) {
 	  alert('Not logged in.');
-      return;
-    }
-    Kakao.Auth.logout(function() {
-	  alert('success');
-    });
+    } else {
+	  Kakao.Auth.logout(function() {
+		alert('success');
+	  });
+	}
+	location.href='https://soeunlee.github.io/norangweb/login';
   }
   function unlinkApp() {
     Kakao.API.request({
@@ -47,4 +51,5 @@
         alert('fail: ' + JSON.stringify(err));
       },
     });
+	logout();
   }
