@@ -22,14 +22,17 @@
 
   }
   function checkMember() {
-	alert(document.location.href);
-	/*
+	var url = document.location.href;
+	var login = 'https://soeunlee.github.io/norangweb/login';
+	var main = 'https://soeunlee.github.io/norangweb/main';
+
     if (!Kakao.Auth.getAccessToken()) {
-	  location.href='https://soeunlee.github.io/norangweb/login';
-	} else {
-	  location.href='https://soeunlee.github.io/norangweb/main';
+	  if (url != login) {
+	    location.href = login;
+	  }
+	} else if (url != main) {
+      location.href = main;
 	}
-	*/
   }
   function logout() {
     if (!Kakao.Auth.getAccessToken()) {
