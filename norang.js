@@ -7,7 +7,7 @@
 		Kakao.API.request({
           url: '/v2/user/me',
 	      success: function(response) {
-		    alert('success: ' + JSON.stringify(response));
+		    alert('success: ' + JSON.stringify(response.kakao_account) + '//' + JSON.stringify(response.properties));
 	      },
 	      fail: function(err) {
 		    alert(JSON.stringify(err));
