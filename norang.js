@@ -9,7 +9,7 @@
           url: '/v2/user/me',
 	      success: function(response) {
 		    // alert('success: ' + JSON.stringify(response.kakao_account.profile.nickname) + '//' + JSON.stringify(response.kakao_account.profile.thumbnail_image_url));
-			alert(JSON.stringify(response.kakao_account.profile.nickname) + '님 환영합니다.');
+			alert(JSON.stringify(response.kakao_account.profile.nickname).replace(/\"/gi,"") + '님 환영합니다.');
 	      },
 	      fail: function(err) {
 		    // alert(JSON.stringify(err));
