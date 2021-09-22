@@ -4,12 +4,21 @@
     Kakao.Auth.login({
       scope: 'friends,talk_message',
       success: function(response) {
-        alert(JSON.stringify(response));
+		Kakao.API.request({
+          url: '/v2/user/me',
+	      success: function(response) {
+		    alert('success: ' + JSON.stringify(response));
+	      },
+	      fail: function(err) {
+		    alert(JSON.stringify(err));
+	      }
+	    });
       },
       fail: function(err) {
         alert(JSON.stringify(err));
       }
     });
+
   }
   function logout() {
     if (!Kakao.Auth.getAccessToken()) {
