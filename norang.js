@@ -8,15 +8,16 @@
 		Kakao.API.request({
           url: '/v2/user/me',
 	      success: function(response) {
-		    alert('success: ' + JSON.stringify(response.kakao_account.profile.nickname) + '//' + JSON.stringify(response.kakao_account.profile.thumbnail_image_url));
+		    // alert('success: ' + JSON.stringify(response.kakao_account.profile.nickname) + '//' + JSON.stringify(response.kakao_account.profile.thumbnail_image_url));
+			alert(JSON.stringify(response.kakao_account.profile.nickname) + '님 환영합니다.');
 	      },
 	      fail: function(err) {
-		    alert(JSON.stringify(err));
+		    // alert(JSON.stringify(err));
 	      }
 	    });
       },
       fail: function(err) {
-        alert(JSON.stringify(err));
+        // alert(JSON.stringify(err));
       }
     });
 	location.reload();
@@ -36,10 +37,10 @@
   }
   function logout() {
     if (!Kakao.Auth.getAccessToken()) {
-	  alert('Not logged in.');
+	  alert('로그인 하지 않았습니다.');
     } else {
 	  Kakao.Auth.logout(function() {
-		alert('success');
+		alert('브라우저 로그아웃 되었습니다.');
 	  });
 	}
 	location.reload();
@@ -48,10 +49,10 @@
     Kakao.API.request({
       url: '/v1/user/unlink',
       success: function(res) {
-        alert('success: ' + JSON.stringify(res));
+        alert('회원 탈퇴 되었습니다.');
       },
       fail: function(err) {
-        alert('fail: ' + JSON.stringify(err));
+        // alert('fail: ' + JSON.stringify(err));
       },
     });
 	logout();
