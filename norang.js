@@ -43,7 +43,7 @@
 		alert('success');
 	  });
 	}
-	// checkMember();
+	checkMember();
   }
   function unlinkApp() {
     Kakao.API.request({
