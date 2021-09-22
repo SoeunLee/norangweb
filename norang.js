@@ -2,7 +2,7 @@
 
   function loginWithKakao() {
     Kakao.Auth.login({
-      scope: 'friends,talk_message',
+      scope: 'profile_nickname,friends,talk_message',
       success: function(response) {
 		Kakao.API.request({
           url: '/v2/user/me',
