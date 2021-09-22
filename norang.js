@@ -19,8 +19,7 @@
         alert(JSON.stringify(err));
       }
     });
-	checkMember();
-
+	location.reload();
   }
   function checkMember() {
 	var url = document.location.href;
@@ -43,7 +42,7 @@
 		alert('success');
 	  });
 	}
-	checkMember();
+	location.reload();
   }
   function unlinkApp() {
     Kakao.API.request({
