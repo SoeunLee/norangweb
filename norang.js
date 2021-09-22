@@ -51,10 +51,10 @@
       url: '/v1/user/unlink',
       success: function(res) {
         alert('회원 탈퇴 되었습니다.');
+		logout();
       },
       fail: function(err) {
         // alert('fail: ' + JSON.stringify(err));
       },
     });
-	logout();
   }
