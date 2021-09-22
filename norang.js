@@ -2,12 +2,12 @@
 
   function loginWithKakao() {
     Kakao.Auth.login({
-      scope: 'profile_nickname,friends,talk_message',
+      scope: 'profile_nickname,profile_image,friends,talk_message',
       success: function(response) {
 		Kakao.API.request({
           url: '/v2/user/me',
 	      success: function(response) {
-		    alert('success: ' + JSON.stringify(response.kakao_account) + '//' + JSON.stringify(response.properties));
+		    alert('success: ' + JSON.stringify(response.kakao_account.profile.nickname) + '//' + JSON.stringify(response.kakao_account.profile.thumbnail_image_url));
 	      },
 	      fail: function(err) {
 		    alert(JSON.stringify(err));
